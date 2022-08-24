@@ -4,6 +4,10 @@
 public class AircraftPhysicsDisplaySettings : ScriptableObject
 {
     private static AircraftPhysicsDisplaySettings displaySettings;
+
+    
+
+    
     public static AircraftPhysicsDisplaySettings Instance
     {
         get
@@ -36,7 +40,7 @@ public class AircraftPhysicsDisplaySettings : ScriptableObject
     // yeni eklendi
 
     
-
+    
     // yoğunluk buradan alınıyor
     public float displayAirDensity = 101325/(287*288)*0.5f;
     // yeni eklendi
@@ -72,6 +76,10 @@ public class AircraftPhysicsDisplaySettings : ScriptableObject
             string path = UnityEditor.AssetDatabase.GUIDToAssetPath(guids[0]);
             return UnityEditor.AssetDatabase.LoadAssetAtPath<AircraftPhysicsDisplaySettings>(path);
         }
+
+        DensityCalculation densityCalculation;
+        densityCalculation = Object.FindObjectOfType<DensityCalculation>();
+        
     }
 #endif
 }

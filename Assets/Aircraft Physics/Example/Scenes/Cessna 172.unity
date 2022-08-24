@@ -1835,7 +1835,7 @@ GameObject:
   - component: {fileID: 685198096}
   - component: {fileID: 685198097}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Density
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2348,8 +2348,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.061129205, y: -0.000000018101966, z: 0.0000000011086321,
-    w: 0.9981299}
+  m_LocalRotation: {x: 0.0611292, y: 0.000000016917552, z: -0.000000001036094, w: 0.9981299}
   m_LocalPosition: {x: 0, y: 6.21, z: -14.273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2894,8 +2893,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188863487}
-  m_LocalRotation: {x: 0.061129205, y: -0.000000018101966, z: 0.0000000011086321,
-    w: 0.9981299}
+  m_LocalRotation: {x: 0.0611292, y: 0.000000016917552, z: -0.000000001036094, w: 0.9981299}
   m_LocalPosition: {x: 0, y: 6.21, z: -14.273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4750,7 +4748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1858170002
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5504,6 +5502,7 @@ MonoBehaviour:
   Flap: 0
   displayText: {fileID: 1480701378}
   flapController: {fileID: 1113386521}
+  flightCheck: 0
 --- !u!1 &2081248300
 GameObject:
   m_ObjectHideFlags: 0
