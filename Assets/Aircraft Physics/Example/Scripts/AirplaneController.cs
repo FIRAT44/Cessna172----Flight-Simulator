@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class AirplaneController : MonoBehaviour
 {
@@ -31,6 +32,10 @@ public class AirplaneController : MonoBehaviour
 
     AircraftPhysics aircraftPhysics;
     Rigidbody rb;
+
+
+    
+    public TMP_Text flapController;
 
     private void Start()
     {
@@ -70,16 +75,30 @@ public class AirplaneController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            Flap = Flap > 0 ? 0 : 0.3f;
+            //Flap = Flap > 0 ? 0  : 0.3f;
+
+            if(Flap > 0)
+            {
+                Flap = 0;
+                flapController.text = "Flap = OFF";
+            }
+            else
+            {
+                Flap = 0.3f;
+                flapController.text = "Flap = ON";
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.B))
         {
             brakesTorque = brakesTorque > 0 ? 0 : 100f;
+
         }
 
         displayText.text = "V: " + ((int)rb.velocity.magnitude).ToString("D3") + " m/s\n";
         displayText.text += "A: " + ((int)transform.position.y).ToString("D4") + " m\n";
+        displayText.text += "D(z): " + ((int)transform.position.z).ToString("D4") + " m\n";
+        displayText.text += "D(x): " + ((int)transform.position.x).ToString("D4") + " m\n";
         displayText.text += "T: " + (int)(thrustPercent * 100) + "%\n";
         displayText.text += brakesTorque > 0 ? "B: ON" : "B: OFF";
     }
