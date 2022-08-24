@@ -15,6 +15,9 @@ public class GameController : MonoBehaviour
     [SerializeField]
     GameObject ElevatorCheck;
 
+    [SerializeField]
+    GameObject camFront,camLeft,camRight;
+
 
     AirplaneController airplaneController;
 
@@ -28,6 +31,34 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         airplaneController = Object.FindObjectOfType<AirplaneController>();   
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            camFront.SetActive(true);
+            camLeft.SetActive(false);
+            camRight.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            camFront.SetActive(false);
+            camLeft.SetActive(false);
+            camRight.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            camLeft.SetActive(true);
+            camRight.SetActive(false);
+            camFront.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            camRight.SetActive(true);
+            camLeft.SetActive(false);
+            camFront.SetActive(false);
+        }
     }
 
     public void AVcheck()

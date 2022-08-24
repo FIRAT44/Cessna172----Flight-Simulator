@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public enum ControlInputType { Pitch, Yaw, Roll, Flap }
+public enum ControlInputType { Pitch, Yaw, Roll, Flap } 
 
 public class AeroSurface : MonoBehaviour
 {
