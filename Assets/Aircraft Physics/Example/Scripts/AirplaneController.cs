@@ -37,6 +37,8 @@ public class AirplaneController : MonoBehaviour
     
     public TMP_Text flapController;
 
+    public bool flightCheck = false;
+
     private void Start()
     {
         aircraftPhysics = GetComponent<AircraftPhysics>();
@@ -57,20 +59,29 @@ public class AirplaneController : MonoBehaviour
 
 
         // yeni kod
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (flightCheck)
         {
-            thrustPercent = thrustPercent > 0 ? 0 : 0.15f;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                thrustPercent = thrustPercent > 0 ? 0 : 0.15f;
+            }
+
+            if (Input.GetKeyDown(KeyCode.N))
+            {
+                thrustPercent = thrustPercent = 0.50f;
+            }
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                thrustPercent = thrustPercent = 1f;
+            }
         }
-        
-        if (Input.GetKeyDown(KeyCode.N))
+        else
         {
-            thrustPercent = thrustPercent = 0.50f;
-        }
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            thrustPercent = thrustPercent = 1f;
+            Debug.Log("Tüm kontrolleri yap");
         }
 
+
+        
         // yeni kod
 
         if (Input.GetKeyDown(KeyCode.F))

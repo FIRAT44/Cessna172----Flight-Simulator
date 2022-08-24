@@ -54,6 +54,7 @@ public class AeroSurface : MonoBehaviour
         float area = config.chord * config.span;
 
         // Dinamik basınç hesaplanıyor
+        // herşey dinamik basınç değişkeni ile değişecek
         float dynamicPressure = 0.5f * airDensity * airVelocity.sqrMagnitude;
 
 
@@ -65,6 +66,7 @@ public class AeroSurface : MonoBehaviour
                                                                 zeroLiftAoA,
                                                                 stallAngleHigh,
                                                                 stallAngleLow);
+
 
         Vector3 lift = liftDirection * aerodynamicCoefficients.x * dynamicPressure * area;
         Vector3 drag = dragDirection * aerodynamicCoefficients.y * dynamicPressure * area;
