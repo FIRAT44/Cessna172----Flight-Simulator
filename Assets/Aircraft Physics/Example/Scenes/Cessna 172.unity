@@ -592,6 +592,106 @@ MonoBehaviour:
   IsControlSurface: 0
   InputType: 0
   InputMultiplyer: 1
+--- !u!1 &187771500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 187771502}
+  - component: {fileID: 187771501}
+  - component: {fileID: 187771504}
+  - component: {fileID: 187771503}
+  - component: {fileID: 187771506}
+  - component: {fileID: 187771505}
+  m_Layer: 0
+  m_Name: ClintObje
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &187771501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187771500}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c27d2c4562ed4047b25675930b31251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &187771502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187771500}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &187771503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187771500}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a969b53e376a74ba153d8fd69f3fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  port: 8051
+--- !u!114 &187771504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187771500}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c7e12c808bc334b8351dedf174a020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  port: 8051
+  lastReceivedUDPPacket: 127.0.0.1
+  allReceivedUDPPackets: 127.0.0.1
+--- !u!114 &187771505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187771500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e04a69cdcbdd3e4c9cfb4128a3a650b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &187771506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187771500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27d84cf465ece6846b85f95e093accbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &251535524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2970,7 +3070,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 5.136885, y: 1}
+    m_SensorSize: {x: 3.3809524, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

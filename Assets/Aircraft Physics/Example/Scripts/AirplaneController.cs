@@ -43,6 +43,8 @@ public class AirplaneController : MonoBehaviour
     {
         aircraftPhysics = GetComponent<AircraftPhysics>();
         rb = GetComponent<Rigidbody>();
+
+        
     }
 
     private void Update()

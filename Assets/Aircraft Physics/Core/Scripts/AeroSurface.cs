@@ -148,7 +148,7 @@ public class AeroSurface : MonoBehaviour
         float liftCoefficient = correctedLiftSlope * (angleOfAttack - zeroLiftAoA);
 
 
-        Debug.Log("lift coefficient" + liftCoefficient.ToString());
+        //Debug.Log("lift coefficient" + liftCoefficient.ToString());
 
 
         float inducedAngle = liftCoefficient / (Mathf.PI * config.aspectRatio);
