@@ -62,7 +62,7 @@ public class UdpClientHandler : MonoBehaviour
             print("message from: " + serverEnd.ToString());//Print server information
                                                            //Output the received data
             recvStr = Encoding.ASCII.GetString(recvData, 0, recvLen);
-            print(recvStr);
+            //print(recvStr);
         }
     }
 

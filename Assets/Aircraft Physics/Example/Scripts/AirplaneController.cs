@@ -16,6 +16,8 @@ public class AirplaneController : MonoBehaviour
     [SerializeField]
     float yawControlSensitivity = 0.2f;
 
+
+    /*
     [Range(-1, 1)]
     public float Pitch;
     [Range(-1, 1)]
@@ -23,12 +25,18 @@ public class AirplaneController : MonoBehaviour
     [Range(-1, 1)]
     public float Roll;
     [Range(0, 1)]
+    */
+
+    public float Pitch;
+    public float Yaw;
+    public float Roll;
+
     public float Flap;
     [SerializeField]
     Text displayText = null;
 
-    float thrustPercent;
-    float brakesTorque;
+    public float thrustPercent;
+    public float brakesTorque;
 
     AircraftPhysics aircraftPhysics;
     Rigidbody rb;
@@ -48,11 +56,16 @@ public class AirplaneController : MonoBehaviour
     }
 
     private void Update()
-    {
+    {/*
         Pitch = Input.GetAxis("Vertical");
         Roll = Input.GetAxis("Horizontal");
         Yaw = Input.GetAxis("Yaw");
-
+        
+        */
+        Debug.Log(Pitch);
+        Debug.Log(Roll);
+        Debug.Log(Yaw);
+        flapController.text = "Flap = "+(Flap*100).ToString();
         /* Eski kod
         if (Input.GetKeyDown(KeyCode.Space))
         {
