@@ -44,10 +44,18 @@ public class UdpClientHandler : MonoBehaviour
         //Empty the sending buffer
         sendData = new byte[1024];
         //Data type conversion
-        sendData = Encoding.ASCII.GetBytes(sendStr);
+        sendData = Encoding.ASCII.GetBytes(sendStr+"1234");
         //Send to the designated server
         socket.SendTo(sendData, sendData.Length, SocketFlags.None, ipEnd);
     }
+
+    /*
+    public void SocketSendCamera(string cam) {
+
+        sendCamera = new byte[1024];
+
+
+    }*/
 
     //The server receives
     void SocketReceive()

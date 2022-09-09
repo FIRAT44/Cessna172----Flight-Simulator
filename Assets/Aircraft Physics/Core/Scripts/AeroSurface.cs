@@ -14,21 +14,32 @@ public class AeroSurface : MonoBehaviour
 
     public void SetFlapAngle(float angle)
     {
+        // flap açısının hesaplandığı kısım
         flapAngle = Mathf.Clamp(angle, -Mathf.Deg2Rad * 50, Mathf.Deg2Rad * 50);
     }
-
+    // BiVector3 ayrı bir hesaplaması olan sınıf
     public BiVector3 CalculateForces(Vector3 worldAirVelocity, float airDensity, Vector3 relativePosition)
     {
         BiVector3 forceAndTorque = new BiVector3();
         if (!gameObject.activeInHierarchy || config == null) return forceAndTorque;
 
-        // Accounting for aspect ratio effect on lift coefficient.
-        float correctedLiftSlope = config.liftSlope * config.aspectRatio /
-           (config.aspectRatio + 2 * (config.aspectRatio + 4) / (config.aspectRatio + 2));
 
-        // Calculating flap deflection influence on zero lift angle of attack
-        // and angles at which stall happens.
-        float theta = Mathf.Acos(2 * config.flapFraction - 1);
+        // Cl üzeriindeki aspect ratio oranının hesaba katılması.
+        /*float correctedLiftSlope = config.liftSlope * config.aspectRatio /
+           (config.aspectRatio + 2 * (config.aspectRatio + 4) / (config.aspectRatio + 2));*/
+
+
+        // Cl üzeriindeki aspect ratio oranının hesaba katılması. Yeni denklem üstteki eski
+        
+        double correctedLiftSlopeA = (Math.PI * config.aspectRatio * 2) / (config.aspectRatio + 2);
+        float correctedLiftSlope = (float)correctedLiftSlopeA; 
+
+         //Debug.Log("corrected Lift slope"+correctedLiftSlope);
+         //Debug.Log("aspect ratio" + config.aspectRatio);
+
+         // Calculating flap deflection influence on zero lift angle of attack
+         // and angles at which stall happens.
+         float theta = Mathf.Acos(2 * config.flapFraction - 1);
         float flapEffectivness = 1 - (theta - Mathf.Sin(theta)) / Mathf.PI;
         float deltaLift = correctedLiftSlope * flapEffectivness * FlapEffectivnessCorrection(flapAngle) * flapAngle;
 
@@ -41,16 +52,28 @@ public class AeroSurface : MonoBehaviour
         float clMaxHigh = correctedLiftSlope * (stallAngleHighBase - zeroLiftAoaBase) + deltaLift * LiftCoefficientMaxFraction(config.flapFraction);
         float clMaxLow = correctedLiftSlope * (stallAngleLowBase - zeroLiftAoaBase) + deltaLift * LiftCoefficientMaxFraction(config.flapFraction);
 
+        //yüksek stall açısı için
         float stallAngleHigh = zeroLiftAoA + clMaxHigh / correctedLiftSlope;
+        
+        //düşük stall açısı için
         float stallAngleLow = zeroLiftAoA + clMaxLow / correctedLiftSlope;
 
         // Calculating air velocity relative to the surface's coordinate system.
         // Z component of the velocity is discarded. 
+
+        // hava hızını hesaplamak için
         Vector3 airVelocity = transform.InverseTransformDirection(worldAirVelocity);
+        
+        // hava hızının x ve y bileşeni
         airVelocity = new Vector3(airVelocity.x, airVelocity.y);
+        
+        // Drag kuvvetini yönü
         Vector3 dragDirection = transform.TransformDirection(airVelocity.normalized);
+        
+        // Lift kuvvetinin yönü
         Vector3 liftDirection = Vector3.Cross(dragDirection, transform.forward);
 
+        // Alanı hesaplamak için chord ile span boyutunu çarpıyoruz
         float area = config.chord * config.span;
 
         // Dinamik basınç hesaplanıyor
@@ -58,9 +81,10 @@ public class AeroSurface : MonoBehaviour
         float dynamicPressure = 0.5f * airDensity * airVelocity.sqrMagnitude;
 
 
-
+        // hava hızının y ve x bileşeninin eğimini alara AoA hesaplanması
         float angleOfAttack = Mathf.Atan2(airVelocity.y, -airVelocity.x);
         
+
         Vector3 aerodynamicCoefficients = CalculateCoefficients(angleOfAttack,
                                                                 correctedLiftSlope,
                                                                 zeroLiftAoA,

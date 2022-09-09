@@ -56,15 +56,16 @@ public class AirplaneController : MonoBehaviour
     }
 
     private void Update()
-    {/*
+    {
+        
         Pitch = Input.GetAxis("Vertical");
         Roll = Input.GetAxis("Horizontal");
         Yaw = Input.GetAxis("Yaw");
         
-        */
-        Debug.Log(Pitch);
-        Debug.Log(Roll);
-        Debug.Log(Yaw);
+        
+        //Debug.Log(Pitch);
+        //Debug.Log(Roll);
+        //Debug.Log(Yaw);
         flapController.text = "Flap = "+(Flap*100).ToString();
         /* Eski kod
         if (Input.GetKeyDown(KeyCode.Space))
