@@ -17,7 +17,7 @@ public class AirplaneController : MonoBehaviour
     float yawControlSensitivity = 0.2f;
 
 
-    /*
+    
     [Range(-1, 1)]
     public float Pitch;
     [Range(-1, 1)]
@@ -25,11 +25,11 @@ public class AirplaneController : MonoBehaviour
     [Range(-1, 1)]
     public float Roll;
     [Range(0, 1)]
-    */
+    
 
-    public float Pitch;
-    public float Yaw;
-    public float Roll;
+  //  public float Pitch;
+   // public float Yaw;
+    //public float Roll;
 
     public float Flap;
     [SerializeField]
@@ -58,9 +58,9 @@ public class AirplaneController : MonoBehaviour
     private void Update()
     {
         
-        //Pitch = Input.GetAxis("Vertical");
-        //Roll = Input.GetAxis("Horizontal");
-        //Yaw = Input.GetAxis("Yaw");
+        Pitch = Input.GetAxis("Vertical");
+        Roll = Input.GetAxis("Horizontal");
+        Yaw = Input.GetAxis("Yaw");
         
         
         //Debug.Log(Pitch);
