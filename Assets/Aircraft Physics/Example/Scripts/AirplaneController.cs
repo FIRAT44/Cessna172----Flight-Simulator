@@ -58,9 +58,9 @@ public class AirplaneController : MonoBehaviour
     private void Update()
     {
         
-        Pitch = Input.GetAxis("Vertical");
-        Roll = Input.GetAxis("Horizontal");
-        Yaw = Input.GetAxis("Yaw");
+        //Pitch = Input.GetAxis("Vertical");
+        //Roll = Input.GetAxis("Horizontal");
+        //Yaw = Input.GetAxis("Yaw");
         
         
         //Debug.Log(Pitch);

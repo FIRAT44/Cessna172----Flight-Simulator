@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e04a69cdcbdd3e4c9cfb4128a3a650b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  airplaneController: {fileID: 0}
+  airplaneController: {fileID: 2066979582}
 --- !u!114 &187771506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1509,7 +1509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40.30005, y: -38.299988}
+  m_AnchoredPosition: {x: 40.30005, y: -38.30005}
   m_SizeDelta: {x: 227.99, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &493979585
